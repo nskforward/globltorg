@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="description" content="Туристрические услуги. Организация туров и отдыха. Горнолыжный отдых, горный экстрим, свадебные туры, новогодние путишестия">
+<meta name="keywords" content="globltorg, туры, виза, визы, карибите, отдых, австралия, азия фото, юар, butan, азія, индия, бруней, дельфины, путишестриве, турист, отпуск, каникулы, реюньон, каледония, новая каледония, kenya, гамбия, маврикий, намибия">
+<meta name="author" content="Ivan Shibkikh">
+<!--H_META-->
+<meta name="robots" content="all">
+<link rel="shortcut icon" href="/img/icons/favicon.ico">
+<link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/css/all.css?rand=0.00001">
+<link rel="stylesheet" type="text/css" href="/css/font-face.css">
+<script language="javascript" type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+<script language="javascript" type="text/javascript" src="/js/api.js"></script>
+<script language="javascript" type="text/javascript" src="/js/avtisizeimg.js"></script>
+<script language="javascript" type="text/javascript" src="/js/jquery.main.js"></script>
+<script language="javascript" type="text/javascript" src="/js/index.js"></script>
+<title>Туристические услуги | GloblTorg.com</title>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33852566-1']);
+  _gaq.push(['_setDomainName', 'globltorg.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div class="nav">
+            <div class="holder">
+                <ul>
+    <li><a href="/"><img src="img/icons/home.ico" alt="home" title="Главная"></a></li>
+    <li><a href="/offers" title="спецпредложения">Спецпредложения</a></li>
+    <li><a href="/services" title="Услуги">Услуги</a></li>
+    <li><a href="/order" title="заказать">Заказать</a></li>
+    <li><a href="/world" title="Страны">Страны</a></li>
+    <li><a href="/visas" title="Визы">Визы</a></li>
+    <li><a href="/about" title="О нас">О нас</a></li>
+    <li><a href="/contacts" title="Контакты">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="holder">
+            <div class="head pretty">Туристические услуги</div>
+	</div>
+    </div>
+    <div id="main" class="indexmain">
+        <div id="content" class="indexcontent">
+            <div class="indexpage">
+                <div class="frame-central">
+                    <div class="img">
+                        <a href="/offers/china"><img class="indeximage" id="image_0" src="/img/img_1372779340.jpg" alt="Новый год 2014" onload="resizing_pictures(this,937,588,'cnow');"></a><a href="/offers/vietnam"><img class="indeximage" id="image_1" src="/img/img_1371641248.jpg" alt="Экзотика Вьетнама" onload="resizing_pictures(this,937,588,'cnow');"></a><a href="/offers/vipdubai"><img class="indeximage" id="image_2" src="/img/index_6.jpg" alt="VIP туры в Дубай" onload="resizing_pictures(this,937,588,'cnow');"></a><a href="/offers/bulgaria_vip"><img class="indeximage" id="image_3" src="/img/index_2.jpg" alt="Лето в Болгарии" onload="resizing_pictures(this,937,588,'cnow');"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="baners">
+                <a id="gallery_0" class="gallery_item item_301" rel="gallery" title="Гран-при Формулы 1" href="/offers/granpri"><img onload="resizing_pictures(this,325,200,'cnow');" src="/img/sb_pages_27_0.jpg" alt="Гран-при Формулы 1"></a><a id="gallery_1" class="gallery_item item_301" rel="gallery" title="Тур на Кубу" href="/offers/cuba"><img onload="resizing_pictures(this,325,200,'cnow');" src="/img/cuba_ban.jpg" alt="Тур на Кубу"></a><a id="gallery_2" class="gallery_item item_301" rel="gallery" title="Тур в Египет" href="/offers/egypt"><img onload="resizing_pictures(this,325,200,'cnow');" src="/img/egypt_ban.jpg" alt="Тур в Египет"></a><a id="gallery_3" class="gallery_item item_301" rel="gallery" title="Тур в Бали" href="/offers/bali"><img onload="resizing_pictures(this,325,200,'cnow');" src="/img/bali_ban.jpg" alt="Тур в Бали"></a><a id="gallery_4" class="gallery_item item_301" rel="gallery" title="Горящие туры" href="/offers/goryacho"><img onload="resizing_pictures(this,325,200,'cnow');" src="/img/index_small_1.jpg" alt="Горящие туры"></a><a id="gallery_5" class="gallery_item item_301" rel="gallery" title="Свадебные туры" href="/offers/wedding"><img onload="resizing_pictures(this,325,200,'cnow');" src="/img/index_small_3.jpg" alt="Свадебные туры"></a>
+            </div>
+    </div>
+    <div id="footer">
+        <div class="courses">USD 33.2 | EUR 44.2</div>
+        <div class="mail_tel">
+        <a class="mail" href="/callback">Заказать звонок</a>
+        <a class="mail" href="/feedback">Задать вопрос</a>
+        <a class="mail" href="mailto:info@globltorg.com">info@globltorg.com</a>
+        <span>+7 925 825 2775, +7 (495) 782 5567</span></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+[08-Jul-2013 14:17:44 Europe/Moscow]  - ERROR - File or dir not found: "C:/openserver/OpenServer/domains/dreamq/application/classes/SysTemplate.php" [C:\openserver\OpenServer\domains\dreamq\core\SysApplication.php:38]
+[16-Jul-2013 16:37:16 Europe/Moscow]  - ERROR - Invalid argument supplied for foreach() [C:\openserver\OpenServer\domains\globltorg2\core\SysErrorHandler.php:33]
