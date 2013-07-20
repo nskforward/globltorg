@@ -53,6 +53,7 @@ class processingController extends ComPController
         
         $new_title = $_POST['query'];
         ComDBCommand::update($table, array('title' => $new_title), array('id' => $banner_id));
+        ComCacheFile::delete('index'.'index');
         ComResponse::JSON(array('refresh'));
     }
     
@@ -63,6 +64,7 @@ class processingController extends ComPController
        $banner_id = intval($params[1]);
        $status = ($params[2]==0)? false:true;
        ComDBCommand::update($table, array('active' => $status), array('id' => $banner_id));
+       ComCacheFile::delete('index'.'index');
        ComResponse::JSON(array('refresh'));
     }
     
@@ -78,6 +80,7 @@ class processingController extends ComPController
            unlink($img);
            ComDBCommand::delete($table, array('id'=>$banner_id));
        }
+       ComCacheFile::delete('index'.'index');
        ComResponse::JSON(array('refresh'));
    }
    

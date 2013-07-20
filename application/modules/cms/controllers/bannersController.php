@@ -104,6 +104,7 @@ class bannersController extends ComPController
         $values['src'] = $new_name;
         $values['active'] = intval($inputs['state']);
         ComDBCommand::insert($table, $values);
+        ComCacheFile::delete('index'.'index');
         ComResponse::JSON(array('redirect', '/cms/banners'));
     }
 }
