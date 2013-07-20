@@ -41,6 +41,11 @@ class ComSecurity
     {
         return hash('sha512',$text, false);
     }
+    
+    static public function crc32($text)
+    {
+        return hash('crc32',$text, false);
+    }
 }
 
 ?>

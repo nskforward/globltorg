@@ -85,7 +85,7 @@ class ComCacheFile implements ICache
     
     static private function encode($key)
     {
-        return ComSecurity::hash256($key);
+        return ComSecurity::crc32($key);
     }
 }
 
