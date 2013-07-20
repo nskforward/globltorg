@@ -66,8 +66,6 @@
             ini_set("log_errors", 1);
             ini_set("error_reporting", E_ERROR);
         }
-        
-        
         date_default_timezone_set($timezone);
         ini_set("zlib.output_compression", $gzip);
         define('APP_LANG',  $lang);
