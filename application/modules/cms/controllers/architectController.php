@@ -42,9 +42,9 @@ class architectController extends ComPController
         $params = ComRoute::getParams();
         switch ($params[0])
         {
-            case 'big'  : $table = 'index_frame';
-            case 'small': $table = 'index_baner';
-            case 'pages': $table = 'pages';
+            case 'big'  : $table = 'index_frame'; break;
+            case 'small': $table = 'index_baner'; break;
+            case 'pages': $table = 'pages'; break;
         }
         if (!ComValidator::check($params[1], 'anum'))
         {

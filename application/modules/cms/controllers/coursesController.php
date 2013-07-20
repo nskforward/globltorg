@@ -21,7 +21,7 @@ class coursesController extends ComPController
         ComHTML::append('<table class="table">');
         foreach ($records as $rec)
         {
-            ComHTML::append('<tr><td>'.$rec->sign.' ('.$rec->title.')</td><td>'.$rec->value.'</td><td><a onclick="inputDlg(\'Изменение курса валюты '.$rec->sign.'\', \''.$rec->value.'\', \'/processing/updatecourse/'.$rec->id.'\');return false;" href="#"><img src="/img/icons/edit.png" alt="edit" title="Редактировать"></a></td></tr>');
+            ComHTML::append('<tr><td>'.$rec->sign.' ('.$rec->title.')</td><td>'.$rec->value.'</td><td><a onclick="inputDlg(\'Изменение курса валюты '.$rec->sign.'\', \''.$rec->value.'\', \'/cms/processing/updatecourse/'.$rec->id.'\');return false;" href="#"><img src="/img/icons/edit.png" alt="edit" title="Редактировать"></a></td></tr>');
         }
         ComHTML::append('</table>');
         ComHTML::dispatch();

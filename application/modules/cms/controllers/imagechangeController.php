@@ -24,9 +24,9 @@ class imagechangeController extends ComPController
         }
         switch ($params[0])
         {
-            case 'big'  : $table = 'index_frame';
-            case 'small': $table = 'index_baner';
-            case 'pages': $table = 'pages';
+            case 'big'  : $table = 'index_frame'; break;
+            case 'small': $table = 'index_baner'; break;
+            case 'pages': $table = 'pages'; break;
         }
         $field = $params[1];
         $id = intval($params[2]);
@@ -64,12 +64,14 @@ class imagechangeController extends ComPController
     public function submitAction()
     {
         $id = intval($_POST['id']);
+    
         switch ($_POST['table'])
         {
-            case 'big'  : $table = 'index_frame';
-            case 'small': $table = 'index_baner';
-            case 'pages': $table = 'pages';
+            case 'big'  : $table = 'index_frame'; break;
+            case 'small': $table = 'index_baner'; break;
+            case 'pages': $table = 'pages'; break;
         }
+        
         if (!ComValidator::check($_POST['field'], 'anum'))
         {
             ComResponse::JSON(array('message', array('error'=>'Неверный формат HTTP-запроса')));

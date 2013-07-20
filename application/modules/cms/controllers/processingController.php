@@ -39,9 +39,9 @@ class processingController extends ComPController
         $params = ComRoute::getParams();
         switch ($params[0])
         {
-            case 'big'  : $table = 'index_frame';
-            case 'small': $table = 'index_baner';
-            case 'pages': $table = 'pages';
+            case 'big'  : $table = 'index_frame'; break;
+            case 'small': $table = 'index_baner'; break;
+            case 'pages': $table = 'pages'; break;
         }
         
         $banner_id = intval($params[1]);
@@ -130,6 +130,30 @@ class processingController extends ComPController
        $order_id = intval($params[0]);
        ComDBCommand::delete('orders', array('id'=>$order_id));
        ComResponse::JSON(array('refresh'));
+   }
+   
+   public function updatecourseAction()
+   {
+       $params = ComRoute::getParams();
+       $course_id = intval($params[0]);
+       if (!ComValidator::check($_POST['query'], 'decimal'))
+       {
+            ComResponse::JSON(array('message', array('error'=>'Неверный формат обновляемого значения')));
+            exit;
+       }
+       
+       $new_value = $_POST['query'];
+       
+       if (!$new_value)
+       {
+           ComResponse::JSON(array('message', array('Ошибка' => ComValidator::getErrorText('decimal'))));
+       }
+       else
+       {
+           ComDBCommand::update('course', array('value' => $new_value), array('id' => $course_id));
+           ComCacheFile::delete('index'.'index');
+           ComResponse::JSON(array('refresh'));
+       }
    }
 }
 
