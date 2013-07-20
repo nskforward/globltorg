@@ -31,7 +31,7 @@ class ComDBConnection
                 {
                     case 'mysql':
                         $dbh = new PDO('mysql:host='.$DbHost.';dbname='.$DbName.';charset=utf8', $DbUser, $DbPassword);
-                        //self::$dbh->exec("set names utf8");
+                        $dbh->exec("set names utf8");
                         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         break;
                     

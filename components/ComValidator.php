@@ -22,6 +22,7 @@ class ComValidator
             case 'anum' : return "/^([a-z][-_0-9a-z]+)$/"; break;
             case 'alphastrings' : return "/^([,.-_ 0-9a-zA-Zа-яА-ЯёЁ]+)$/"; break;
             case 'num' : return "/^([0-9]+)$/i"; break;
+            case 'decimal' : return "/^([0-9]+.[0-9]+)|([0-9]+)$/i"; break;
             case 'version' : return "/^([A-Za-z.0-9]+)$/i"; break;
             case 'phone' : return "/^([-+() 0-9]+)$/i"; break;
             case 'custom' : return "/^([-:!?.,_+() A-Za-z0-9а-яА-ЯёЁ]+)$/i"; break;
@@ -39,6 +40,7 @@ class ComValidator
             case 'version' : return 'Can be format: 0.0.0.0'; break;
             case 'custom' : return 'Содержатся запрещённые символы'; break;
             case 'phone' : return 'Только номер телефона'; break;
+            case 'decimal' : return 'Только числа'; break;
         }
     }
     
