@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<validator method="post" action="/login" class="sform" info="false">
-<field name="user"   type="alpha-number" req="true" min="4" max="30">Имя пользователя</field>
-<field name="pass"   type="password" req="true" min="3" max="30">Пароль</field>
-<field type="submit">Вход</field>
-</validator>

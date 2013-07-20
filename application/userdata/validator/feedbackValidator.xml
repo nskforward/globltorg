@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<validator method="post" action="/contactback/feedback" class="sform" info="false">
-<field name="fio"  type="strings-alpha" req="true" min="3" max="50">Ваше имя</field>
-<field name="email"       type="email" req="true" max="100">Ваш Email</field>
-<field name="body" type="multilinetext" req="true" min="5" max="10000">Вопрос</field>
-<field name="captcha" type="captcha" max="4">Код с картинки</field>
-<field type="submit">Отправить</field>
-</validator>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<validator method="post" action="/contactback/callback" class="sform" info="false">
-<field name="fio"  type="strings-alpha" req="true" min="3" max="50">Ваше имя</field>
-<field name="tel"  type="phone" req="true" min="5" max="20">Номер телефона (с кодом)</field>
-<field name="topic" type="anytext" req="true" min="5" max="1000">Коротко о теме разговора</field>
-<field name="clock"  type="time" req="true"  min="1" max="1000">Когда позвонить?</field>
-<field name="captcha" type="captcha" max="4">Код с картинки</field>
-<field type="submit">Отправить</field>
-</validator>
