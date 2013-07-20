@@ -35,7 +35,7 @@ class SysAutoload
             $file = PATH.'core/'.$class.'.php';
             if (!file_exists($file))
             {
-                $file = PATH.'application/classes/'.$class.'.php';
+                $file = PATH.'application/models/'.$class.'.php';
                 WebApp::checkPath($file);
             }
         }   
