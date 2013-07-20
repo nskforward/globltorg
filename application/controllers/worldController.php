@@ -37,19 +37,7 @@ class worldController
             ComHTML::load('general');
             ComHTML::title($records->title);
             ComHTML::load('continent');
-            if ($records->ld_sb !== null)
-            {
-                ComHTML::setVar('LEFT_SIDEBAR', '<div id="sidebar-1" class="sidebarN" ><div class="frame-img-1"><div><img style="visibility: hidden;" onload="resizing_pictures(this,349,222,\'cnow\');" src="/img/'.$records->lt_sb.'" alt=""></div></div><div class="frame-img-2"><div><img style="visibility: hidden;" src="/img/'.$records->ld_sb.'" onload="resizing_pictures(this,343,221,\'cnow\');" alt=""></div></div></div>');
-            }    
-            elseIf($records->lt_sb !== null)
-            {
-                ComHTML::setVar('LEFT_SIDEBAR', '<div id="sidebar-1" class="sidebarN" ><div class="frame-img-1"><div><img style="visibility: hidden;" onload="resizing_pictures(this,349,222,\'cnow\');" src="/img/'.$records->lt_sb.'" alt=""></div></div></div>');
-            }
-            if ($records->r_sb !== null)
-            {
-                ComHTML::setVar('RIGHT_SIDEBAR', '<div id="sidebar-2" class="sidebarN"><div class="frame-img-3"><div><img style="visibility: hidden;" onload="resizing_pictures(this,348,310,\'cnow\');" src="/img/'.$records->r_sb.'" alt="" /></div></div></div>');
-            }
-            
+            sideBar::render($records->lt_sb, $records->ld_sb, $records->r_sb);
             ComHTML::setVar('BODY_DES', stripcslashes($records->content));
             ComHTML::setVar('NAV', $records->title);
             $items = '<ul class="services">';
@@ -74,19 +62,7 @@ class worldController
             ComHTML::load('general');
             ComHTML::load('country');
             ComHTML::title($records[0]->country);
-            if ($records[0]->ld_sb !== null)
-            {
-                ComHTML::setVar('LEFT_SIDEBAR','<div id="sidebar-1" class="sidebarN" ><div class="frame-img-1"><div><img style="visibility: hidden;" onload="resizing_pictures(this,349,222,\'cnow\');" src="/img/'.$records[0]->lt_sb.'" alt=""></div></div><div class="frame-img-2"><div><img style="visibility: hidden;" src="/img/'.$records[0]->ld_sb.'" onload="resizing_pictures(this,343,221,\'cnow\');" alt=""></div></div></div>');
-            }
-            elseIf($records[0]->lt_sb !== null)
-            {
-                ComHTML::setVar('LEFT_SIDEBAR','<div id="sidebar-1" class="sidebarN" ><div class="frame-img-1"><div><img style="visibility: hidden;" onload="resizing_pictures(this,349,222,\'cnow\');" src="/img/'.$records[0]->lt_sb.'" alt=""></div></div></div>');
-            }
-            if ($records[0]->r_sb !== null)
-            {
-                ComHTML::setVar('RIGHT_SIDEBAR','<div id="sidebar-2" class="sidebarN"><div class="frame-img-3"><div><img style="visibility: hidden;" onload="resizing_pictures(this,348,310,\'cnow\');" src="/img/'.$records[0]->r_sb.'" alt="" /></div></div></div>');
-            }
-            
+            sideBar::render($records[0]->lt_sb, $records[0]->ld_sb, $records[0]->r_sb);
             ComHTML::setVar('CNAME',$records[0]->continent);
             ComHTML::setVar('CURL', ComRoute::getAction());
             ComHTML::setVar('NAV', $records[0]->country);
