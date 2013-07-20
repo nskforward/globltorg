@@ -14,7 +14,7 @@ class indexController
 {
     public function _init()
     {
-        $content = ComCacheFile::get(ComRoute::getController().ComRoute::getAction());
+        $content = ComCacheFile::get('index'.'index');
         if ($content != null)
         {
             ComHTML::dispatch($content);
@@ -25,7 +25,7 @@ class indexController
     public function _end()
     {
         ComHTML::dispatch();
-        ComCacheFile::set(ComRoute::getController().ComRoute::getAction(), ComHTML::getContent(), 60);
+        ComCacheFile::set('index'.'index', ComHTML::getContent(), 6000);
     }
     
     public function indexAction()
