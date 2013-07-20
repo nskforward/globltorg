@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<localization>
+<cod name="aboutcomp_title">
+  <title lang="rus">О компании</title>
+  <title lang="eng">About us</title>
+</cod>
+<cod name="world_title">
+  <title lang="rus">Страны</title>
+  <title lang="eng">World</title>
+</cod>
+<cod name="deals_title">
+  <title lang="rus">Спецпредложения</title>
+  <title lang="eng">Deals</title>
+</cod>
+<cod name="services_title">
+  <title lang="rus">Услуги</title>
+  <title lang="eng">Services</title>
+</cod>
+<cod name="visas_title">
+  <title lang="rus">Визы</title>
+  <title lang="eng">Visas</title>
+</cod>
+<cod name="booking_travel_title">
+  <title lang="rus">Заказ путешествия</title>
+  <title lang="eng">Booking travel</title>
+</cod>
+<cod name="contacts_title">
+  <title lang="rus">Контакты</title>
+  <title lang="eng">Contacts</title>
+</cod>
+<cod name="tourist_services_title">
+  <title lang="rus">Туристические услуги</title>
+  <title lang="eng">Tourist services</title>
+</cod>
+</localization>

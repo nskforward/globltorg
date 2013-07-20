@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<validator method="post" action="/support" class="reg">
+<field name="name"    type="strings-alpha" req="true" min="4" max="50">Ваши Фамилия и Имя</field>
+<field name="email"   type="email"         req="true" max="50">Ваш контактный E-mail</field>
+<field name="body"    type="multilinetext" req="true" min="5" max="5000">Описание вопроса</field>
+<field name="captcha" type="captcha" max="4">Введите код с картинки</field>
+<field type="submit">Отправить</field>
+</validator>

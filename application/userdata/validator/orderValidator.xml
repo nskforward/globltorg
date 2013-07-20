@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<validator method="post" action="/order" class="sform">
+<field name="fio"         type="strings-alpha" req="true" min="3" max="100">Ваше Ф.И.О.</field>
+<field name="city_out"    type="strings-alpha" req="true"  min="3" max="100">Место вылета (Страна, город, регион)</field>
+<field name="city_in"     type="strings-alpha" req="true"  min="3" max="100">Куда хотите съездить</field>
+<field name="night_count" type="number" min="0" max="500">Кол-во ночей</field>
+<field name="men_count"   type="number" min="1" max="200">Кол-во взрослых человек</field>
+<field name="air_class"   type="radio" req="true" values="эконом=0|бизнес=1" selected="0">Класс перелёта</field>
+<field name="date_out"    type="date" year_start="2012" year_stop="2018">Дата начала тура</field>
+<field name="category"    type="list"  textFile="categores_ru.txt">Категория номера</field>
+<field name="type"        type="list"  textFile="types_ru.txt" selected=''>Тип номера</field>
+<field name="insurance"   type="checkbox" selected="true">Страховка</field>
+<field name="wishes"      type="multilinetext" min="5" max="5000">Дополнительные пожелания</field>
+<field name="email"       type="email" req="true" max="100">Email для связи</field>
+<field name="tel"         type="number" min="5" max="20">Контактный телефон (с кодом)</field>
+<field name="captcha" type="captcha" max="4">Введите код с картинки</field>
+<field type="submit">Отправить</field>
+</validator>
