@@ -14,7 +14,7 @@ class debugController
 {
     public function indexAction()
     {
-        ComWebUser::runAsGuestIfNotRunning();
+       
     }
 }
 
