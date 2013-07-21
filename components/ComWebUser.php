@@ -52,6 +52,19 @@ class ComWebUser implements IWebUser
             ComResponse::redirect(self::$login_page);
         }
     }
+    
+    static public function checkAccess($section,$event)
+    {
+        $rec = ComDBCommand::getRow('access', array('user_id'=>  self::$id, 'section'=>$section, 'event'=>$event));
+        if (!$rec)
+        {
+            return false;
+        }
+        else
+        {
+            return $rec->allow;
+        }
+    }
 
     static function runAsGuestIfNotRunning()
     {
