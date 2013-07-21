@@ -23,6 +23,7 @@
                     <li><a href="/cms/menu" title="Меню">Меню</a></li>
                     <li><a href="/cms/orders" title="Заявки">Заявки</a></li>
                     <li><a href="/cms/courses" title="Курсы">Курсы</a></li>
+                    <li><a href="/cms/users" title="Пользователи">Пользователи</a></li>
                     <li><a href="/cms/login/logout" title="Выход">Выход</a></li>
                 </ul>
             </div>
