@@ -14,7 +14,12 @@ class processingController extends ComPController
 {
     public function uploadAction()
     {
-       /*
+        if (!ComWebUser::checkAccess('images', 'create'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
+        /*
         if ($_FILES['files']['type'][0] != 'text/xml')
         {
             $result = array('error', 'Unsupported file type ('.$_FILES['files']['name'][0].')');

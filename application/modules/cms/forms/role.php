@@ -12,23 +12,30 @@ function getFormRole()
             'autocomplete' => false,
             'elements' => array(
                 'section' => array(
-                    'type' => 'text',
+                    'type' => 'list',
                     'label'=> 'Секция',
                     'required' => true,
-                    'minLength' => 2,
-                    'maxLength'=> 32,
-                    'validator' => 'anum',
-                    'formatting' => array('trim', 'lowercase')
+                    'items' => array(
+                        'banners' => 'banners',
+                        'courses' => 'courses',
+                        'images' => 'images',
+                        'menu' => 'menu',
+                        'offers' => 'offers',
+                        'orders' => 'orders',
+                        'roles' => 'roles',
+                        'users' => 'users'
+                        ),
+                    'validator' => 'anum'
                     ),
                 'event' => array(
                     'type' => 'list',
                     'label'=> 'Действие',
                     'required' => true,
+                    'validator' => 'anum',
                     'items' => array(
                         'update' => 'update',
                         'delete' => 'delete',
-                        'create' => 'create',
-                        'view' => 'view'
+                        'create' => 'create'
                         )
                     ),
                 'allow' => array(
