@@ -17,7 +17,8 @@ class checkboxUIClass extends UIInputClass
     
     public function getHtml()
     {
-        return '<input type="checkbox" name="'.$this->name.'" value="'.$this->value.'">'.$this->title;
+        $checked = ($this->value == true)?' checked':null;
+        return '<input type="checkbox" name="'.$this->name.'" value="'.$this->value.'"'.$checked.'>'.$this->title;
     }
 }
 

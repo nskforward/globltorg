@@ -31,28 +31,32 @@ class loginController
         if (!$inputs)
         {
             ComResponse::JSON(array('error', ComValidator::getErrors()));
+            return;
         }
-        else
+        
+        $row = ComDBCommand::getRow('users', array('name' => $inputs['user']));
+        if (!$row)
         {
-            $row = ComDBCommand::getRow('users', array('name' => $inputs['user']));
-            if (!$row)
-            {
-                ComResponse::JSON(array('error', array('user'=>'Пользователь не зарегистрирован')));
-            }
-            else
-            {
-                if (ComSecurity::hash512($inputs['pass']) != $row->pass)
-                {
-                    ComResponse::JSON(array('error', array('pass'=>'Неверный пароль')));
-                }
-                else
-                {
-                    ComWebUser::registry($row->id, $row->title, $row->role, false);
-                    ComResponse::JSON(array('redirect', '/cms/'));
-                }
-            }
+            ComResponse::JSON(array('error', array('user'=>'Пользователь не зарегистрирован')));
+            return;
         }
-    }
+        
+        if ($row->block == 1)
+        {
+            ComResponse::JSON(array('error', array('user'=>'Пользователь заблокирован')));
+            return;
+        }
+            
+        if (ComSecurity::hash512($inputs['pass']) != $row->pass)
+        {
+            ComResponse::JSON(array('error', array('pass'=>'Неверный пароль')));
+            return;
+        }
+  
+        ComWebUser::registry($row->id, $row->title, $row->role, false);
+        ComDBCommand::update('users', array('date_login' => ComDateTime::getNow()), array('id' => $row->id));
+        ComResponse::JSON(array('redirect', '/cms/'));
+   }
 }
 
 ?>

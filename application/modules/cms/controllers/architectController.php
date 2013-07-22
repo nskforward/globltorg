@@ -116,6 +116,44 @@ class architectController extends ComPController
         if ($rec->wishes != null) ComHTML::append('<tr><td>Пожелания</td><td><b>'.$rec->wishes.'</b></td></tr>');
         ComResponse::JSON(ComHTML::packToJSON());
     }
+    
+    public function newuserAction()
+    {
+        $form = new ComForm('newuser');
+        $form->compile();
+        ComResponse::JSON(array('message', array($rec->title => '<div class="scroll"><script type="text/javascript">'.$form->getJavaScript().'</script>'.$form->getHtml().'</div>')));
+    }
+    
+    public function edituserAction()
+    {
+        $params = ComRoute::getParams();
+        $id = intval($params[0]);
+        $rec = ComDBCommand::getRow('users', array('id'=>$id));
+        if (!$rec)
+        {
+            ComResponse::JSON(array('message', array('Error' => 'Пользователь не найден')));
+            return;
+        }
+        $form = new ComForm('updateuser');
+        $form->addElement('title', array('value'=>$rec->title));
+        $form->addElement('email', array('value'=>$rec->email));
+        $form->addElement('reg',   array('value'=>$rec->date_reg));
+        $form->addElement('state', array('selected'=>$rec->block));
+        $form->editAction('/cms/users/update/'.$id);
+        $form->compile();
+        ComResponse::JSON(array('message', array($rec->title => '<div class="scroll"><script type="text/javascript">'.$form->getJavaScript().'</script>'.$form->getHtml().'</div>')));
+    }
+    
+    public function newroleAction()
+    {
+        $params = ComRoute::getParams();
+        $id = intval($params[0]);
+        $form = new ComForm('role');
+        $form->addElement('id', array('type'=>'hidden', 'value' => $id));
+        $form->compile();
+        ComResponse::JSON(array('message', array($rec->title => '<div class="scroll"><script type="text/javascript">'.$form->getJavaScript().'</script>'.$form->getHtml().'</div>')));
+    }
+            
 }
 
 ?>

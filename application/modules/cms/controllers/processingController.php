@@ -36,6 +36,11 @@ class processingController extends ComPController
     
     public function updatetitleAction()
     {
+       if (!ComWebUser::checkAccess('offers', 'update'))
+       {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+       }
         $params = ComRoute::getParams();
         switch ($params[0])
         {
@@ -59,6 +64,11 @@ class processingController extends ComPController
     
     public function activatebannAction()
     {
+       if (!ComWebUser::checkAccess('banners', 'update'))
+       {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+       }
        $params = ComRoute::getParams();
        $table = ($params[0]=='big')?'index_frame':'index_baner';
        $banner_id = intval($params[1]);
@@ -70,6 +80,11 @@ class processingController extends ComPController
     
    public function deletebannerAction()
    {
+       if (!ComWebUser::checkAccess('banners', 'delete'))
+       {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+       }
        $params = ComRoute::getParams();
        $table = ($params[0]=='big')?'index_frame':'index_baner';
        $banner_id = intval($params[1]);
@@ -86,6 +101,12 @@ class processingController extends ComPController
    
    public function activatepageAction()
    {
+       if (!ComWebUser::checkAccess('offers', 'update'))
+       {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+       }
+        
        $params = ComRoute::getParams();
        $page_id = intval($params[0]);
        $status = ($params[1]==0)? false:true;
@@ -95,6 +116,12 @@ class processingController extends ComPController
    
    public function deleteofferAction()
    {
+       if (!ComWebUser::checkAccess('offers', 'delete'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
+       
        $params = ComRoute::getParams();
        $offer_id = intval($params[0]);
        $records = ComDBCommand::getRow('index_frame', array('link_id' => $offer_id));
@@ -126,6 +153,12 @@ class processingController extends ComPController
    
    public function deleteorderAction()
    {
+       if (!ComWebUser::checkAccess('orders', 'delete'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
+       
        $params = ComRoute::getParams();
        $order_id = intval($params[0]);
        ComDBCommand::delete('orders', array('id'=>$order_id));
@@ -134,6 +167,12 @@ class processingController extends ComPController
    
    public function updatecourseAction()
    {
+       if (!ComWebUser::checkAccess('courses', 'update'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
+       
        $params = ComRoute::getParams();
        $course_id = intval($params[0]);
        if (!ComValidator::check($_POST['query'], 'decimal'))

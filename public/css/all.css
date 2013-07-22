@@ -1065,7 +1065,7 @@ span.tooltip {
     position: relative;
     overflow: auto;
     max-height: 50em;
-    border: 1px #ddd solid;
+    text-align: left;
 }
     
 .popup-form__row {

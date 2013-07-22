@@ -103,9 +103,12 @@ class ComValidator
                 }
                 if ($setting['unique'])
                 {
+                    ComLog::debug($setting['unique']['table']);
+                    ComLog::debug($setting['unique']['field']);
+                    ComLog::debug($inputs[$key]);
                     if ((!$setting['unique']['table'])or(!$setting['unique']['field'])) throw new SysException('Invalid format of "unique" attribute ('.$key.')');
                     $row = ComDBCommand::getRow($setting['unique']['table'], array($setting['unique']['field'] => $inputs[$key]));
-                    if ($row !== false) self::$errors[$key] = 'Это значение уже используется, введите другое';
+                    if ($row) self::$errors[$key] = 'Это значение уже используется';
                 }
                 if ($setting['type'] == 'captcha')
                 {
@@ -113,6 +116,10 @@ class ComValidator
                     if (ComSession::get('captcha_key') == NULL) self::$errors[$key] = 'Неверный код';
                     elseif (ComSession::get('captcha_key') != ComSecurity::hash256($inputs[$key])) self::$errors[$key] = 'Неверный код';
                     ComSession::delete('captcha_key');
+                }
+                if ($setting['type'] == 'checkbox')
+                {
+                    $inputs[$key] = ($_POST[$key])?true:false;
                 }
                 if ($setting['type'] != 'captcha') $outputs[$key] = $inputs[$key];
             }    

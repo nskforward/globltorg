@@ -1,5 +1,6 @@
 var error=0;
 var is_tooltip = false;
+var ajax_in_progress = false;
 
 $(document).ready(function()
 {
@@ -45,11 +46,26 @@ function checkForm(formname, action)
                 window['checkform_'+formname+'_'+el.name+'_custom'](value);
             }
         }
+        if(fixerror===error)
+        {
+            if (typeof window['checkform_'+formname+'_'+el.name+'_ajax'] === 'function')
+            {
+                window['checkform_'+formname+'_'+el.name+'_ajax'](value);
+            }
+        }
     }
-    if(error===0)
+    if((error===0)&&(ajax_in_progress===false))
     {
         post(formname, action);
     }
+    else
+    {
+        if ((error===0)&&(ajax_in_progress===true))
+        {
+            setTimeout('if(error===0){post(\''+formname+'\', \''+action+'\');}', 1000);
+        }
+    }
+        
 }
 
 
@@ -347,5 +363,21 @@ function loadForm(url)
             });
             ReCaptcha();
         }
+    }, "json");
+}
+
+function checkUniq(url, field, value, dbtable, dbfield)
+{
+    ajax_in_progress = true;
+    $('#submit').hide();
+    $.ajaxSetup({dataType: "json"});
+    $.post(url,'table='+dbtable+'&field='+dbfield+'&query='+value,function(data)
+    {
+        if (data[0] == "unsuccess")
+        {
+            put_error(field, "Значение уже используется");
+        }
+        ajax_in_progress = false;
+        $('#submit').show();
     }, "json");
 }

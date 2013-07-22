@@ -17,7 +17,7 @@ class radioUIClass extends UIBaseElementClass
     
     public function getHtml()
     {
-        $separator = ($this->position == 'hor')? '&nbsp;&nbsp;&nbsp;&nbsp;' : '<br>';
+        $separator = ($this->position == 'h')? '&nbsp;&nbsp;&nbsp;&nbsp;' : '<br>';
         $html = NULL;
         foreach ($this->items as $key => $value)
         {

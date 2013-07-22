@@ -6,7 +6,7 @@
 
 class ComForm
 {
-    private $name, $action, $submit_title, $method, $class, $autocomplete, $html=NULL, $javascript;
+    private $name, $description, $header, $action, $submit_title, $method, $class, $autocomplete, $html=NULL, $javascript;
     private $elements = array();
     
     public function __construct($param=null)
@@ -60,6 +60,11 @@ class ComForm
         }
     }
     
+    public function removeAttr($name)
+    {
+        $this->{$name} = null;
+    }
+    
     public function __set($name, $value)
     {
         $this->{$name} = $value;
@@ -78,8 +83,9 @@ class ComForm
         $this->javascript = NULL;
         if ($this->enctype) $enctype = ' enctype="'.$this->enctype.'"';
         else $enctype = NULL;
+        $form_header = ($this->header)?'<h2>'.$this->header.'</h2>':null;
         $form_desc = ($this->description)?'<p>'.$this->description.'</p>':null;
-        $this->html = $form_desc.'<form name="'.$this->name.'"'.$enctype.' action="/'.$this->action.'" method="'.$this->method.'" '.$this->class.'autocomplete="'.$this->autocomplete.'"><table>';
+        $this->html = $form_header.$form_desc.'<form name="'.$this->name.'"'.$enctype.' action="/'.$this->action.'" method="'.$this->method.'" '.$this->class.'autocomplete="'.$this->autocomplete.'"><table>';
         foreach ($this->elements as $key => $element)
         {
             $output = null;
@@ -112,6 +118,10 @@ class ComForm
             {
                 $output->javaScript('custom','if(value != document.forms[\''.$this->name.'\'].'.$element['conformity'].'.value){put_error("'.$key.'","Значения не совпадают");}');
             }
+            if ($element['unique'])
+            {
+                $output->javaScript('ajax','checkUniq(\'/cms/submit/checkuniq\', \''.$key.'\',value,\''.$element['unique']['table'].'\',\''.$element['unique']['field'].'\');');
+            }
             $javascript = $output->getJavaScript();
             if (count($javascript)> 0)
             {
@@ -131,9 +141,13 @@ class ComForm
                 {
                     $this->javascript .= 'function checkform_'.$this->name.'_'.$key.'_custom(value){'.$javascript['custom'].'}';
                 }
+                if ($javascript['ajax']!=NULL)
+                {
+                    $this->javascript .= 'function checkform_'.$this->name.'_'.$key.'_ajax(value){'.$javascript['ajax'].'}';
+                }
              }
         }
-        $this->html .= '<tr><td></td><td><button onclick="checkForm(\''.$this->name.'\', \''.$this->action.'\'); return false;">'.$this->submit_title.'</button></td></tr>';
+        $this->html .= '<tr><td></td><td><button id="submit" onclick="checkForm(\''.$this->name.'\', \''.$this->action.'\'); return false;">'.$this->submit_title.'</button></td></tr>';
         $this->html .= '</table></form>';
     }
 

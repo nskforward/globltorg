@@ -39,6 +39,11 @@ class offerController
     
     public function submitAction()
     {
+        if (!ComWebUser::checkAccess('offers', 'update'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
         $id = intval($_POST['id']);
         $inputs = ComValidator::isValidate($_POST, 'offer');
         if (!$inputs)
