@@ -103,9 +103,6 @@ class ComValidator
                 }
                 if ($setting['unique'])
                 {
-                    ComLog::debug($setting['unique']['table']);
-                    ComLog::debug($setting['unique']['field']);
-                    ComLog::debug($inputs[$key]);
                     if ((!$setting['unique']['table'])or(!$setting['unique']['field'])) throw new SysException('Invalid format of "unique" attribute ('.$key.')');
                     $row = ComDBCommand::getRow($setting['unique']['table'], array($setting['unique']['field'] => $inputs[$key]));
                     if ($row) self::$errors[$key] = 'Это значение уже используется';

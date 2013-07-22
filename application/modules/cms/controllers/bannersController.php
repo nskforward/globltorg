@@ -82,6 +82,11 @@ class bannersController extends ComPController
     
     public function submitAction()
     {
+        if (!ComWebUser::checkAccess('banners', 'create'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
         $inputs = ComValidator::isValidate($_POST, 'banner');
         if (!$inputs)
         {

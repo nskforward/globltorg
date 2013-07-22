@@ -5,9 +5,8 @@ function getFormNewuser()
     return array(
             'name' => 'userform',
             'class' => 'form',
-            'action' => 'users/create',
+            'action' => '/cms/users/create',
             'submit_title' => 'Создать',
-            'header'=>'Новый пользователь',
             'method' => 'post',
             'autocomplete' => false,
             'elements' => array(

@@ -33,7 +33,7 @@ class usersController extends ComPController
             ComHTML::append('</table>');
         }
         ComHTML::br();
-        ComHTML::append('<button onclick="loadForm(\'/cms/architect/newuser\');" class="yellow">Создать</button>');
+        ComHTML::append('<a href="/cms/users/newuser"><button class="yellow">Создать</button></a>');
         ComHTML::dispatch();
     }
     
@@ -89,7 +89,7 @@ class usersController extends ComPController
         $params['block'] = 0;
                         
         ComDBCommand::insert('users', $params);
-        ComResponse::JSON(array('refresh'));
+        ComResponse::JSON(array('redirect', '/cms/users'));
     }
     
     
@@ -138,6 +138,18 @@ class usersController extends ComPController
         ComDBCommand::update('users', $params, array('id' => $id));
         
         ComResponse::JSON(array('refresh'));
+    }
+    
+    public function newuserAction()
+    {
+        ComHTML::load('cms');
+        ComHTML::title('Новый пользователь');
+        ComHTML::h1('Новый пользователь');
+        $form = new ComForm('newuser');
+        $form->compile();
+        ComHTML::setJSCode($form->getJavaScript());
+        ComHTML::append($form->getHtml());
+        ComHTML::dispatch();
     }
 }
 

@@ -63,6 +63,11 @@ class imagechangeController extends ComPController
     
     public function submitAction()
     {
+        if (!ComWebUser::checkAccess('images', 'update'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
         $id = intval($_POST['id']);
     
         switch ($_POST['table'])

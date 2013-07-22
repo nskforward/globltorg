@@ -26,11 +26,6 @@ class submitController extends ComPController
         ComDBCommand::update($table, array('link_id' => $link_id), array('id' => $banner_id));
         ComResponse::JSON(array('redirect', '/cms/banners'));
     }
-    
-    public function checkuniqAction()
-    {
-        ComResponse::JSON(array('success'));
-    }
 }
 
 ?>

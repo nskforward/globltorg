@@ -54,6 +54,11 @@ class menuController extends ComPController
     
     public function submitAction()
     {
+        if (!ComWebUser::checkAccess('menu', 'update'))
+        {
+            ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
+            return;
+        }
         $id = intval($_POST['id']);
         $inputs = ComValidator::isValidate($_POST, 'menu');
         if (!$inputs)

@@ -118,10 +118,6 @@ class ComForm
             {
                 $output->javaScript('custom','if(value != document.forms[\''.$this->name.'\'].'.$element['conformity'].'.value){put_error("'.$key.'","Значения не совпадают");}');
             }
-            if ($element['unique'])
-            {
-                $output->javaScript('ajax','checkUniq(\'/cms/submit/checkuniq\', \''.$key.'\',value,\''.$element['unique']['table'].'\',\''.$element['unique']['field'].'\');');
-            }
             $javascript = $output->getJavaScript();
             if (count($javascript)> 0)
             {
@@ -140,10 +136,6 @@ class ComForm
                 if ($javascript['custom']!=NULL)
                 {
                     $this->javascript .= 'function checkform_'.$this->name.'_'.$key.'_custom(value){'.$javascript['custom'].'}';
-                }
-                if ($javascript['ajax']!=NULL)
-                {
-                    $this->javascript .= 'function checkform_'.$this->name.'_'.$key.'_ajax(value){'.$javascript['ajax'].'}';
                 }
              }
         }

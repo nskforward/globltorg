@@ -117,13 +117,6 @@ class architectController extends ComPController
         ComResponse::JSON(ComHTML::packToJSON());
     }
     
-    public function newuserAction()
-    {
-        $form = new ComForm('newuser');
-        $form->compile();
-        ComResponse::JSON(array('message', array($rec->title => '<div class="scroll"><script type="text/javascript">'.$form->getJavaScript().'</script>'.$form->getHtml().'</div>')));
-    }
-    
     public function edituserAction()
     {
         $params = ComRoute::getParams();
