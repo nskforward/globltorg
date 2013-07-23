@@ -77,6 +77,11 @@ class ComRoute implements IRoute
     {
         return self::$module;
     }
+    
+    static public function actionsToControllers()
+    {
+        return self;
+    }
 }
 
 ?>

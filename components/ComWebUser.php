@@ -45,11 +45,16 @@ class ComWebUser implements IWebUser
             ComSession::create($id, $name, 0);
     }
     
-    static public function privateAccess()
+    static public function isPrivateAccess()
     {
         if (!ComSession::isActive())
         {
             ComResponse::redirect(self::$login_page);
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
     

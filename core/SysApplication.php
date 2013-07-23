@@ -119,24 +119,43 @@
         {
             self::system404();
         }
-        if (method_exists($instance, $action))
+        
+        if (method_exists($instance, '_init'))
         {
-            if (method_exists($instance, '_init')) $instance->_init();
-            $instance->$action();
-            if (method_exists($instance, '_end')) $instance->_end();
+            $instance->_init();
         }
-        else
+        
+        $continue = true;
+        
+        if (method_exists($instance, '_inheritance'))
         {
-            if (method_exists($instance, '_autoload'))
+            $continue = $instance->_inheritance();
+        }
+        
+        if ($continue)
+        {
+            if (method_exists($instance, $action))
             {
-                if (method_exists($instance, '_init')) $instance->_init();
-                $instance->_autoload($iAction);
-                if (method_exists($instance, '_end')) $instance->_end();
+                $instance->$action();
             }
             else
             {
-                self::system404();
+                if (method_exists($instance, '_autoload'))
+                {
+                    if (method_exists($instance, '_init')) $instance->_init();
+                    $instance->_autoload($iAction);
+                    if (method_exists($instance, '_end')) $instance->_end();
+                }
+                else
+                {
+                    self::system404();
+                }
             }
+        }
+        
+        if (method_exists($instance, '_end'))
+        {
+            $instance->_end();
         }
     }
 }
