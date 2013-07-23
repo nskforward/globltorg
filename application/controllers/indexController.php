@@ -25,7 +25,7 @@ class indexController
     public function _end()
     {
         ComHTML::dispatch();
-        ComCacheFile::set('index'.'index', ComHTML::getContent(), 6000);
+        ComCacheFile::set('index'.'index', ComHTML::getContent(), 30000);
     }
     
     public function indexAction()
