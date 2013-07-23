@@ -58,6 +58,12 @@ class ComRoute implements IRoute
         }
     }
 
+    static public function leftUrl()
+    {
+        self::$controller = self::$action;
+        self::$action = array_shift(self::$params);
+    }
+    
     static public function getController()
     {
         return self::$controller;

@@ -14,14 +14,22 @@ abstract class ComRoutController
 {
     public function _inheritance()
     {
+        ComRoute::leftUrl();
         $params = ComRoute::getParams();
-        if ((ComRoute::getAction() == null)or(ComRoute::getAction() == 'index'))
+        if ((ComRoute::getController() == null)or(ComRoute::getController() == 'index'))
         {
-            $this->indexAction();
+            if (method_exists($this, 'indexAction'))
+            {
+                $this->indexAction();
+            }
+            else
+            {
+                WebApp::system404();
+            }
         }
         else
         {
-            WebApp::getInstance(ComRoute::getAction(), $params[0], ComRoute::getModule());
+            WebApp::getInstance(ComRoute::getController(), ComRoute::getAction(), ComRoute::getModule());
         }
         return false;
     }
