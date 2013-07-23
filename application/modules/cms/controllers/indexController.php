@@ -22,7 +22,7 @@ class indexController extends ComPController
         ComHTML::p('Для редактирования данных, откройте соответствующий раздел в верхнем меню');
         ComHTML::br();
         ComHTML::hr();
-        ComHTML::p('DreamQ Framwork 1.02 | updated 16.07.2013');
+        ComHTML::p('DreamQ Framwork 0.03 | updated 23.07.2013');
         ComHTML::dispatch();
     }
 }

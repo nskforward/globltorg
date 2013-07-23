@@ -16,14 +16,14 @@ function getFormRole()
                     'label'=> 'Секция',
                     'required' => true,
                     'items' => array(
-                        'banners' => 'banners',
-                        'courses' => 'courses',
-                        'images' => 'images',
-                        'menu' => 'menu',
-                        'offers' => 'offers',
-                        'orders' => 'orders',
-                        'roles' => 'roles',
-                        'users' => 'users'
+                        'banners' => 'Баннеры',
+                        'courses' => 'Курсы',
+                        'images' => 'Картинки',
+                        'menu' => 'Меню',
+                        'offers' => 'Спецпредложения',
+                        'orders' => 'Заявки',
+                        'roles' => 'Права',
+                        'users' => 'Пользователи'
                         ),
                     'validator' => 'anum'
                     ),
@@ -33,9 +33,9 @@ function getFormRole()
                     'required' => true,
                     'validator' => 'anum',
                     'items' => array(
-                        'update' => 'update',
-                        'delete' => 'delete',
-                        'create' => 'create'
+                        'update' => 'Обновление',
+                        'delete' => 'Удаление',
+                        'create' => 'Создание'
                         )
                     ),
                 'allow' => array(
