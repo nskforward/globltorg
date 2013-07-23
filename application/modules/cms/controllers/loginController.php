@@ -16,6 +16,7 @@ class loginController
     {
         ComHTML::load('login');
         ComHTML::title('Авторизация');
+        sideBar::render('login_1.jpg', null, null);
         ComHTML::dispatch();
     }
     
