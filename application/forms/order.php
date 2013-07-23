@@ -74,7 +74,7 @@ function getFormOrder()
                         '1' => 'бизнес'
                     ),
                     'selected' => '0',
-                    'position' => 'hor'
+                    'position' => 'h'
                     ),
                 'date_out' => array(
                     'type' => 'text',
