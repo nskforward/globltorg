@@ -70,7 +70,7 @@ a:hover {text-decoration:underline;}
     -moz-text-shadow: white 0 0 4px, white 0 0 4px, white 0 0 4px;
     -o-text-shadow: white 0 0 4px, white 0 0 4px, white 0 0 4px;
     text-shadow: white 0 0 4px, white 0 0 4px, white 0 0 4px;
-    padding:20px  0px  40px 60px;
+    padding: 20px 0 20px 60px;
     text-align: justify;
 }
 #content p{
