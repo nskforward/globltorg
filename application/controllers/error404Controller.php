@@ -23,6 +23,7 @@ class error404Controller
             return;
         }
         ComHTML::load('general');
+        sideBar::render('error_1.png', null, 'error_2.png');
         ComHTML::load('system/error404');
         ComHTML::title('Page not found');
         ComHTML::setVar('URL', $_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']);
