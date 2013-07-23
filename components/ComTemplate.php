@@ -7,19 +7,15 @@
 
 class ComTemplate {
    
-   static public function load($template_name, $isGlobal=false)
+   static public function load($template_name)
    {
-        if (!$isGlobal)
-        {
-            $template_file = WORK_PATH.'views/'.$template_name.'.tpl';
-        }
-        else
-        {
-            $template_file = PATH.'application/views/'.$template_name.'.tpl';
-        }
-        
-        WebApp::checkPath($template_file);
-        return file_get_contents($template_file);
+       $template_file = WORK_PATH.'views/'.$template_name.'.tpl';
+       if (!file_exists($template_file)) 
+       {
+           $template_file = PATH.'application/views/'.$template_name.'.tpl';
+       }
+       WebApp::checkPath($template_file);
+       return file_get_contents($template_file);
    }
    
 

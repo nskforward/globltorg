@@ -140,9 +140,40 @@ function post(Name, url)
     {
         PopupHidden();
         setpopupshowclose();
-        showpopup(textStatus, errorThrown);
+        
+        switch (jqXHR.status)
+        {
+            case 404:
+                var data = JSON.parse(jqXHR.responseText);
+                $.each(data[1], function(key, value)
+                {
+                    showpopup(key, value);
+                });
+                break;
+                
+            case 500:
+                var data = JSON.parse(jqXHR.responseText);
+                $.each(data[1], function(key, value)
+                {
+                    showpopup(key, value);
+                });
+                break;
+            
+            default:
+                showpopup(textStatus, errorThrown);
+        }
     }
 });
+}
+
+function dump(obj)
+{
+    var out = '';
+    for (var i in obj)
+    {
+        out += i + ": " + obj[i] + "\n";
+    }
+    alert(out);
 }
 
 function showpopup(title, message)

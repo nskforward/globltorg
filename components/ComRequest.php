@@ -40,6 +40,18 @@ class ComRequest
         else
             return false;
     }
+    
+    static public function isAccept($string)
+    {
+        if (strpos($_SERVER['HTTP_ACCEPT'], $string)===false)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }
 
 ?>

@@ -16,6 +16,12 @@ class error404Controller
     public function indexAction()
     {
         ComResponse::setCode(404);
+        
+        if (ComRequest::isAccept('application/json'))
+        {
+            ComResponse::JSON(array('message', array('Страница не найдена' => $_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI'])));
+            return;
+        }
         ComHTML::load('general');
         ComHTML::load('system/error404');
         ComHTML::title('Page not found');

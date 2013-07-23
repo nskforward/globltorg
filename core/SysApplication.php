@@ -39,7 +39,7 @@
         }
     }
 
-        static function system404()
+    static function system404()
     {
         if (self::$error404Controller == null)
            throw new SysException('Not registered controller for 404 error');
