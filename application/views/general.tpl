@@ -7,7 +7,7 @@
 <meta name="author" content="Ivan Shibkikh">
 <meta name="robots" content="all">
 <link rel="shortcut icon" href="/img/icons/favicon.ico">
-<link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/css/all.css?rand=0.00001">
 <link rel="stylesheet" type="text/css" href="/css/font-face.css">
 <script language="javascript" type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>

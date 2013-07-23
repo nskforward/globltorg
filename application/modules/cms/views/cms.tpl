@@ -4,7 +4,7 @@
 <meta charset="utf-8"> 
 <meta name="author" content="Ivan Shibkikh">
 <link rel="shortcut icon" href="/img/icons/favicon.ico">
-<link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/css/all.css">
 <script language="javascript" type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
 <script language="javascript" type="text/javascript" src="/js/api.js"></script>
