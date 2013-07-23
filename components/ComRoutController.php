@@ -12,7 +12,7 @@
  */
 abstract class ComRoutController
 {
-    public function _inheritance()
+    final public function _inheritance()
     {
         ComRoute::leftUrl();
         $params = ComRoute::getParams();

@@ -19,7 +19,7 @@ class loginController
         sideBar::render('login_1.jpg', null, null);
         ComHTML::dispatch();
     }
-    
+
     public function logoutAction()
     {
         ComWebUser::destroy();

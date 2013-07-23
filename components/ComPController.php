@@ -12,7 +12,7 @@
  */
 abstract class ComPController
 {
-    public function _inheritance()
+    final public function _inheritance()
     {
         if (!ComWebUser::isPrivateAccess())
         {
