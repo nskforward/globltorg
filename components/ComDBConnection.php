@@ -12,7 +12,7 @@
  */
 class ComDBConnection
 {
-    static private $dbh = null;
+    static private $dbh = null, $is_trans=false;
     static public $params = array();
     
     static private function checkConnection()
@@ -23,6 +23,31 @@ class ComDBConnection
         }
     }
     
+    static public function beginTransaction()
+    {
+        self::checkConnection();
+        self::$is_trans = true;
+        self::$dbh->beginTransaction();
+    }
+    
+    static public function rollBack()
+    {
+        if (self::$is_trans)
+        {
+            self::$dbh->rollBack();
+            self::$is_trans = false;
+        }
+    }
+    
+    static public function commit()
+    {
+        if (self::$is_trans)
+        {
+            self::$dbh->commit();
+            self::$is_trans = false;
+        }
+    }
+
     static private function init($DbType, $DbName, $DbHost=null, $DbUser=null, $DbPassword=null)
     {
         try
