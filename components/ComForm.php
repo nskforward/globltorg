@@ -91,8 +91,6 @@ class ComForm
             $output = null;
             $src = PATH.'components/ui/UIBaseElement.php';
             require_once $src;
-            $src = PATH.'components/ui/UIInput.php';
-            require_once $src;
             $class = 'UI'.ucfirst($element['type']);
             $src = PATH.'components/ui/'.$class.'.php';
             WebApp::checkPath($src);

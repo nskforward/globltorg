@@ -10,11 +10,14 @@
  *
  * @author ishibkikh
  */
-class UIAutosuggest extends UIInput
+class UIAutosuggest extends UIBaseElement
 {
+    protected $value;
+    
     public function __construct($name, $values)
     {
-        parent::__construct($name, $values['value'], $values['required']);
+        parent::__construct($name, $values['required']);
+        $this->value = $values['value'];
     }
     
 

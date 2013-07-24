@@ -5,14 +5,16 @@
  *
  * @author ivan
  */
-class UICheckbox extends UIInput
+class UICheckbox extends UIBaseElement
 {
     protected $title;
+    protected $value;
     
     public function __construct($name, $values)
     {
-        parent::__construct($name, 'checkbox', $values, null, null, false);
+        parent::__construct($name, false);
         $this->title = $values['title'];
+        $this->value = $values['value'];
     }
     
     public function getHtml()

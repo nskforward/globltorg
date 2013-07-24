@@ -10,14 +10,16 @@
  *
  * @author ishibkikh
  */
-class UIFile extends UIInput
+class UIFile extends UIBaseElement
 {
     protected $max_size, $url;
+    protected $value;
 
     public function __construct($name, $values) {
-        parent::__construct($name, $values['value'], $values['required']);
+        parent::__construct($name, $values['required']);
         $this->max_size = (intval($values['maxSize']) > 0)? intval($values['maxSize']): 5000000;
         $this->url = $values['url'];
+        $this->value = $values['value'];
     }
     
     public function getHtml()
