@@ -109,7 +109,8 @@ function getFormOrder()
                 'insurance' => array(
                     'type' => 'checkbox',
                     'label'=> 'Страховка',
-                    'title'=> 'Медицина и другое'
+                    'title'=> 'Медицина и другое',
+                    'selected' => true
                     ),
                 'wishes' => array(
                     'type' => 'inputText',

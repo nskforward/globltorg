@@ -8,18 +8,18 @@
 class UICheckbox extends UIBaseElement
 {
     protected $title;
-    protected $value;
+    protected $selected;
     
     public function __construct($name, $values)
     {
         parent::__construct($name, false);
         $this->title = $values['title'];
-        $this->value = $values['value'];
+        $this->selected = $values['selected'];
     }
     
     public function getHtml()
     {
-        $checked = ($this->value == true)?' checked':null;
+        $checked = ($this->selected == true)?' checked':null;
         return '<input type="checkbox" name="'.$this->name.'" value="'.$this->value.'"'.$checked.'>'.$this->title;
     }
 }
