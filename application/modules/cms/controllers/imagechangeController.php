@@ -27,6 +27,8 @@ class imagechangeController extends ComPController
             case 'big'  : $table = 'index_frame'; break;
             case 'small': $table = 'index_baner'; break;
             case 'pages': $table = 'pages'; break;
+            case 'continent': $table = 'continents'; break;
+            case 'country': $table = 'places_tour'; break;
         }
         $field = $params[1];
         $id = intval($params[2]);
@@ -75,6 +77,8 @@ class imagechangeController extends ComPController
             case 'big'  : $table = 'index_frame'; break;
             case 'small': $table = 'index_baner'; break;
             case 'pages': $table = 'pages'; break;
+            case 'continent': $table = 'continents'; break;
+            case 'country': $table = 'places_tour'; break;
         }
         
         if (!ComValidator::check($_POST['field'], 'anum'))
@@ -107,20 +111,35 @@ class imagechangeController extends ComPController
         }
         rename($uploaded_img, $new_img);
         ComDBCommand::update($table, array($field => $new_name), array('id' => $id));
-        if ($field=='src')
+        
+        switch ($table)
         {
-            ComResponse::JSON(array('redirect', '/cms/banners'));
-        }
-        else
-        {
-            if ($rec->offer == 1)
-            {
-                ComResponse::JSON(array('redirect', '/cms/offers'));
-            }
-            else
-            {
-                ComResponse::JSON(array('redirect', '/cms/menu'));
-            }
+            case 'continents':
+                ComResponse::JSON(array('redirect', '/cms/countries'));
+                break;
+            
+            case 'places_tour':
+                ComResponse::JSON(array('redirect', '/cms/countries/country/'.$rec->parent_id));
+                break;
+            
+            case 'pages':
+                if ($rec->offer == 1)
+                {
+                    ComResponse::JSON(array('redirect', '/cms/offers'));
+                }
+                else
+                {
+                    ComResponse::JSON(array('redirect', '/cms/menu'));
+                }
+                break;
+                
+            case 'index_frame':
+                ComResponse::JSON(array('redirect', '/cms/banners'));
+                break;
+            
+            case 'index_baner':
+                ComResponse::JSON(array('redirect', '/cms/banners'));
+                break;
         }
     }
 }

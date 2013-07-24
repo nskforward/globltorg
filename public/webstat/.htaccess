@@ -1,7 +1,0 @@
-DirectoryIndex index.html
-AuthType Basic
-AuthName "/www/gtrd.ru/public/webstat"
-AuthUserFile /var/www/user13874/data/etc/52563323.passwd
-<Limit GET POST>
-	require valid-user
-</Limit>

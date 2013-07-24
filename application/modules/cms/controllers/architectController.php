@@ -45,6 +45,8 @@ class architectController extends ComPController
             case 'big'  : $table = 'index_frame'; break;
             case 'small': $table = 'index_baner'; break;
             case 'pages': $table = 'pages'; break;
+            case 'continent': $table = 'continents'; break;
+            case 'country': $table = 'places_tour'; break;
         }
         if (!ComValidator::check($params[1], 'anum'))
         {

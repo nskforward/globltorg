@@ -6,7 +6,7 @@
 
 class ComForm
 {
-    private $name, $description, $header, $action, $submit_title, $method, $class, $autocomplete, $html=NULL, $javascript;
+    private $name, $description, $header, $action, $submit_title, $method, $class, $autocomplete, $html=NULL, $javascript, $cancel_url;
     private $elements = array();
     
     public function __construct($param=null)
@@ -35,6 +35,11 @@ class ComForm
     public function editAction($action)
     {
         $this->action = $action;
+    }
+    
+    public function editCancel($action)
+    {
+        $this->cancel_url = $action;
     }
     
     public function editSubmitTitle($title)

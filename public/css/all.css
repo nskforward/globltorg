@@ -73,13 +73,15 @@ a:hover {text-decoration:underline;}
     padding: 20px 0 40px 60px;
     text-align: justify;
 }
-#content p{
+
+p{
 	display:block;
 	margin:5px 80px 0px 0px;
 	font:13px Tahoma, Geneva, sans-serif;
 	color:#444444;
         line-height: 1.6;
 }
+
 #main {
 	background:#fff;
 	display:block;
@@ -368,12 +370,6 @@ a:hover {text-decoration:underline;}
 	display:inline-block;
         text-decoration: none;
         cursor: auto;
-}
-.services .wrap-text p {
-	display:block;
-	margin:5px 0px 5px 0px;
-	font:14px Tahoma, Geneva, sans-serif;
-	color:#000;
 }
 
 .services .wrap-text a {

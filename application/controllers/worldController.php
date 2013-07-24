@@ -45,7 +45,7 @@ class worldController
             $countries = ComDBCommand::getAll('places_tour', array('parent_id' => $records->id));
             foreach ($countries as $rec)
             {
-                $items .= '<li><div class="wrap-img"><img src="/img/'.$rec->des_img.'" alt="'.$rec->title.'" onload="resizing_pictures(this,425,254,\'cnow\');"><div></div></div><div class="wrap-text">'.
+                $items .= '<li><div class="wrap-img"><img src="/img/'.$rec->lt_sb.'" alt="'.$rec->title.'" onload="resizing_pictures(this,425,254,\'cnow\');"><div></div></div><div class="wrap-text">'.
                 '<h6>'.$rec->title.'</h6><p>'.$rec->des.'</p><a href="/world/'.ComRoute::getAction().'/'.$rec->url.'">Читать далее</a></div></li>';
             }
             $items .= '</ul>';
