@@ -6,15 +6,14 @@
  * @author ishibkikh
  */
 
-class textareaUIClass extends UIInputClass
+class UIInputText extends UIInput
 {
-    protected $min, $max, $id;
+    protected $min, $max;
     public function __construct($name, $values)
     {
         parent::__construct($name, $values['value'], $values['required']);
         $this->min = ($values['minLength'] == NULL)? 0 : $values['minLength'];
         $this->max = ($values['maxLength'] == NULL)? 256 : $values['maxLength'];
-        $this->id = ($values['id'] == NULL)? null : ' id="'.$values['id'].'"';
         $this->javaScript('length','if(value.length>'.$this->max.'){put_error("'.$this->name.'","Длина не может быть более '.$this->max.' символов");}if((value.length>0)&&(value.length<'.$this->min.')){put_error("'.$this->name.'","Длина не может быть менее '.$this->min.' символов");}');
     }
     
@@ -26,7 +25,7 @@ class textareaUIClass extends UIInputClass
     
     public function getHtml()
     {
-        return '<textarea'.$this->id.' maxlength="'.$this->max.'" wrap="soft" name="'.$this->name.'">'.$this->value.'</textarea>';
+        return '<input name="'.$this->name.'" type="text" value="'.$this->value.'" maxlength="'.$this->max.'">';
     }
 }
 

@@ -11,7 +11,7 @@ function getFormCallback()
             'autocomplete' => false,
             'elements' => array(
                 'fio' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Ваше имя',
                     'required' => true,
                     'minLength' => 3,
@@ -23,21 +23,21 @@ function getFormCallback()
                         )
                     ),
                 'tel' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Контактный телефон (с кодом)',
                     'validator' => 'phone',
                     'required' => true,
                     'maxLength' => 100
                     ),
                 'topic' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Коротко о теме разговора',
                     'required' => true,
                     'maxLength' => 1000,
                     'formatting' => array('trim')
                     ),
                 'clock' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Когда позвонить?',
                     'maxLength'=>64,
                     'validator' => 'custom',

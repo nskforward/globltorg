@@ -12,7 +12,7 @@ function getFormOrder()
             'autocomplete' => false,
             'elements' => array(
                 'fio' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Ваше Ф.И.О.',
                     'required' => true,
                     'minLength' => 3,
@@ -24,7 +24,7 @@ function getFormOrder()
                         )
                     ),
                 'city_out' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Место вылета (Страна, город, регион)',
                     'required' => true,
                     'minLength' => 3,
@@ -36,7 +36,7 @@ function getFormOrder()
                         )
                     ),
                 'city_in' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Куда хотите съездить',
                     'required' => true,
                     'minLength' => 3,
@@ -48,7 +48,7 @@ function getFormOrder()
                         )
                     ),
                 'night_count' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Кол-во ночей',
                     'maxLength'=>3,
                     'required' => false,
@@ -58,7 +58,7 @@ function getFormOrder()
                         )
                     ),
                 'men_count' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Кол-во взрослых человек',
                     'maxLength'=>3,
                     'validator' => 'num',
@@ -77,7 +77,7 @@ function getFormOrder()
                     'position' => 'h'
                     ),
                 'date_out' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Дата начала тура',
                     'maxLength'=>64,
                     'validator' => 'custom',
@@ -112,19 +112,19 @@ function getFormOrder()
                     'title'=> 'Медицина и другое'
                     ),
                 'wishes' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Дополнительные пожелания',
                     'validator' => 'custom',
                     'maxLength' => 1000
                     ),
                 'tel' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Контактный телефон (с кодом)',
                     'validator' => 'phone',
                     'maxLength' => 100
                     ),
                 'email' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'E-Mail',
                     'required' => true,
                     'maxLength'=>128,

@@ -11,7 +11,7 @@ function getFormFeedback()
             'autocomplete' => false,
             'elements' => array(
                 'fio' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Ваше имя',
                     'required' => true,
                     'minLength' => 3,
@@ -23,14 +23,14 @@ function getFormFeedback()
                         )
                     ),
                 'email' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Контактный E-mail',
                     'required' => true,
                     'maxLength'=>128,
                     'validator' => 'email'
                 ),
                 'body' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Вопрос',
                     'required' => true,
                     'minLength' => 10,

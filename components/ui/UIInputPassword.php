@@ -5,7 +5,7 @@
  *
  * @author ishibkikh
  */
-class passwordUIClass extends UIInputClass
+class UIInputPassword extends UIInput
 {
     public function __construct($name, $values)
     {

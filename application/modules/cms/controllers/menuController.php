@@ -44,7 +44,7 @@ class menuController extends ComPController
             ComHTML::h1($rec->title);
             $form = new ComForm('menu');
             $form->addElement('content', array('value'=> stripslashes($rec->content)));
-            $form->addElement('id', array('type'=>'hidden', 'value'=>$id));
+            $form->addElement('id', array('type'=>'inputHidden', 'value'=>$id));
             $form->compile();
             ComHTML::setJSCode($form->getJavaScript());
             ComHTML::append($form->getHtml());

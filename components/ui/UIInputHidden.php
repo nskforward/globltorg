@@ -4,7 +4,7 @@
  *
  * @author ishibkikh
  */
-class hiddenUIClass extends UIBaseElementClass
+class UIInputHidden extends UIBaseElement
 {
     protected $link, $value, $formname, $action, $sn_button;
     

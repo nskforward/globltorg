@@ -4,7 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-class captchaUIClass extends UIBaseElementClass
+class UICaptcha extends UIBaseElement
 {
     protected $max;
     

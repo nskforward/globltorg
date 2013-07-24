@@ -14,7 +14,8 @@ function getFormUpload()
                 'file' => array(
                     'type' => 'file',
                     'url' => 'cms/processing/upload',
-                    'maxSize' => '4000000',
+                    'maxSize' => 3000000, // bytes
+                    'accept' => array('image/png','image/jpeg','image/'),
                     'required' => true
                     )
             )

@@ -30,7 +30,7 @@ class offerController
         $form->addElement('content', array('value' => $rec->content));
         $form->editAction('/cms/offer/submit');
         $form->editSubmitTitle('Изменить');
-        $form->addElement('id', array('type'=>'hidden', 'value'=>$id));
+        $form->addElement('id', array('type'=>'inputHidden', 'value'=>$id));
         $form->compile();
         ComHTML::setJSCode($form->getJavaScript());
         ComHTML::append($form->getHtml());

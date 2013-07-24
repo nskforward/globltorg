@@ -12,7 +12,7 @@ function getFormLogin()
             'autocomplete' => false,
             'elements' => array(
                 'user' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Пользователь',
                     'required' => true,
                     'minLength' => 4,
@@ -21,7 +21,7 @@ function getFormLogin()
                     'formatting' => array('trim')
                     ),
                 'pass' => array(
-                    'type' => 'password',
+                    'type' => 'inputPassword',
                     'label'=> 'Пароль',
                     'required' => true,
                     'maxLength' => 64

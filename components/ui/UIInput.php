@@ -5,7 +5,7 @@
  *
  * @author ishibkikh
  */
-abstract class UIInputClass extends UIBaseElementClass
+abstract class UIInput extends UIBaseElement
 {
     protected $value;
     

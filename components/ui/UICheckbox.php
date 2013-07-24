@@ -5,7 +5,7 @@
  *
  * @author ivan
  */
-class checkboxUIClass extends UIInputClass
+class UICheckbox extends UIInput
 {
     protected $title;
     

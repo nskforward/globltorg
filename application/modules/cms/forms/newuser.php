@@ -11,7 +11,7 @@ function getFormNewuser()
             'autocomplete' => false,
             'elements' => array(
                 'title' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Имя Фамилия',
                     'required' => true,
                     'minLength' => 4,
@@ -20,7 +20,7 @@ function getFormNewuser()
                     'formatting' => array('trim', 'upperfirstletters')
                     ),
                 'user' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Логин',
                     'required' => true,
                     'minLength' => 4,
@@ -33,7 +33,7 @@ function getFormNewuser()
                     'formatting' => array('trim', 'lowercase')
                     ),
                 'email' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'E-mail',
                     'required' => true,
                     'minLength' => 4,
@@ -41,13 +41,13 @@ function getFormNewuser()
                     'validator' => 'email'
                     ),
                 'pass' => array(
-                    'type' => 'password',
+                    'type' => 'inputPassword',
                     'label'=> 'Новый пароль',
                     'required' => true,
                     'maxLength' => 64
                     ),
                 'repass' => array(
-                    'type' => 'password',
+                    'type' => 'inputPassword',
                     'label'=> 'Повтор пароля',
                     'required' => true,
                     'maxLength' => 64,

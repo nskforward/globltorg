@@ -89,11 +89,11 @@ class ComForm
         foreach ($this->elements as $key => $element)
         {
             $output = null;
-            $src = PATH.'components/ui/UIBaseElementClass.php';
+            $src = PATH.'components/ui/UIBaseElement.php';
             require_once $src;
-            $src = PATH.'components/ui/UIInputClass.php';
+            $src = PATH.'components/ui/UIInput.php';
             require_once $src;
-            $class = $element['type'].'UIClass';
+            $class = 'UI'.ucfirst($element['type']);
             $src = PATH.'components/ui/'.$class.'.php';
             WebApp::checkPath($src);
             require_once $src;

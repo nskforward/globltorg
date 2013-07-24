@@ -11,7 +11,7 @@ function getFormBanner()
             'autocomplete' => false,
             'elements' => array(
                 'title' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Название баннера',
                     'required' => true,
                     'minLength' => 4,

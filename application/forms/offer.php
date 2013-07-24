@@ -11,7 +11,7 @@ function getFormOffer()
             'autocomplete' => false,
             'elements' => array(
                 'title' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Название',
                     'required' => true,
                     'minLength' => 4,
@@ -30,7 +30,7 @@ function getFormOffer()
                     'selected' => '1'
                     ),
                 'url' => array(
-                  'type' => 'text',
+                  'type' => 'inputText',
                   'label'=> 'url',
                   'minLength' => 4,
                   'maxLength'=>20,

@@ -4,7 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-class radioUIClass extends UIBaseElementClass
+class UIRadio extends UIBaseElement
 {
     public function __construct($name, $values)
     {

@@ -10,7 +10,7 @@
  *
  * @author ishibkikh
  */
-class fileUIClass extends UIInputClass
+class UIFile extends UIInput
 {
     protected $max_size, $url;
 

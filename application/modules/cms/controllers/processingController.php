@@ -19,22 +19,21 @@ class processingController extends ComPController
             ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
             return;
         }
-        /*
-        if ($_FILES['files']['type'][0] != 'text/xml')
+       
+        $form = new ComForm('upload');
+        $params = $form->getElements();
+        if (!in_array($_FILES['files']['type'][0], $params['file']['accept']))
         {
-            $result = array('error', 'Unsupported file type ('.$_FILES['files']['name'][0].')');
-            $this->view->json($result);
-            $this->view->dispatch();
-            exit;
+            ComResponse::JSON(array('message', array('Error'=>'Загружаемый вами файл имеет неподдерживаемый тип "'.$_FILES['files']['type'][0].'". Попробуйте загрузить другую картинку.')));
+            return;
         }
-         * 
-         */
-        if ($_FILES['files']['size'][0] > 4000000)
+      
+        if ($_FILES['files']['size'][0] > $params['file']['maxSize'])
         {
-            ComResponse::JSON(array('message', array('Error'=>'File size more 4 MB ('.$_FILES['files']['size'][0].' byte in '.$_FILES['files']['name'][0].')')));
-            exit;
+            ComResponse::JSON(array('message', array('Error'=>'Загружаемый файл превышает лимит для размера файла. Попробуйте уменьшить размер или загрузить другую картинку.')));
+            return;
         }
-        
+
         move_uploaded_file($_FILES['files']['tmp_name'][0], PATH.'data/upload/'.$_FILES['files']['name'][0]);
         ComResponse::JSON(array('success', $_FILES['files']['name'][0]));
     }

@@ -26,8 +26,8 @@ class architectController extends ComPController
         $link_id = $rec->link_id;
         $form = new ComForm('links');
         $form->addElement('link', array('selected' => $link_id ));
-        $form->addElement('banner_id', array('type' => 'hidden','value'=> $id));
-        $form->addElement('table', array('type' => 'hidden','value'=> $params[0]));
+        $form->addElement('banner_id', array('type' => 'inputHidden','value'=> $id));
+        $form->addElement('table', array('type' => 'inputHidden','value'=> $params[0]));
         $records = ComDBCommand::getAll('pages', array('offer' => 1));
         foreach ($records as $record)
         {
@@ -142,7 +142,7 @@ class architectController extends ComPController
         $params = ComRoute::getParams();
         $id = intval($params[0]);
         $form = new ComForm('role');
-        $form->addElement('id', array('type'=>'hidden', 'value' => $id));
+        $form->addElement('id', array('type'=>'inputHidden', 'value' => $id));
         $form->compile();
         ComResponse::JSON(array('message', array($rec->title => '<div class="scroll"><script type="text/javascript">'.$form->getJavaScript().'</script>'.$form->getHtml().'</div>')));
     }

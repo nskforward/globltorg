@@ -52,9 +52,9 @@ class imagechangeController extends ComPController
         }
         ComHTML::h2('Новое изображение');
         $form = new ComForm('upload');
-        $form->addElement('table', array('type'=>'hidden', 'value'=>$params[0]));
-        $form->addElement('field', array('type'=>'hidden', 'value'=>$field));
-        $form->addElement('id', array('type'=>'hidden', 'value'=>$id));
+        $form->addElement('table', array('type'=>'inputHidden', 'value'=>$params[0]));
+        $form->addElement('field', array('type'=>'inputHidden', 'value'=>$field));
+        $form->addElement('id', array('type'=>'inputHidden', 'value'=>$id));
         $form->compile();
         ComHTML::append('<script type="text/javascript">'.$form->getJavaScript().'</script>'.$form->getHtml());
         ComHTML::dispatch();

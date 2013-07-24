@@ -5,7 +5,7 @@
  *
  * @author ishibkikh
  */
-class printUIClass extends UIBaseElementClass
+class UIPrint extends UIBaseElement
 {
     private $value;
     

@@ -5,7 +5,7 @@
  *
  * @author ishibkikh
  */
-abstract class UIBaseElementClass
+abstract class UIBaseElement
 {
     protected $name, $javascript=array();
     

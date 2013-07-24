@@ -55,7 +55,7 @@ class bannersController extends ComPController
         {
             $form->addListItem('link', $rec->id, $rec->title);
         }
-        $form->addElement('type', array('type'=>'hidden','value'=>'big'));
+        $form->addElement('type', array('type'=>'inputHidden','value'=>'big'));
         $form->compile();
         ComHTML::setJSCode($form->getJavaScript());
         ComHTML::append($form->getHtml());
@@ -73,7 +73,7 @@ class bannersController extends ComPController
         {
             $form->addListItem('link', $rec->id, $rec->title);
         }
-        $form->addElement('type', array('type'=>'hidden','value'=>'small'));
+        $form->addElement('type', array('type'=>'inputHidden','value'=>'small'));
         $form->compile();
         ComHTML::setJSCode($form->getJavaScript());
         ComHTML::append($form->getHtml());

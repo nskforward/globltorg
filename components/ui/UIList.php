@@ -10,7 +10,7 @@
  *
  * @author ishibkikh
  */
-class listUIClass extends UIBaseElementClass
+class UIList extends UIBaseElement
 {
     protected $items, $selected;
     

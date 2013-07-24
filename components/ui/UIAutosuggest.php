@@ -10,7 +10,7 @@
  *
  * @author ishibkikh
  */
-class autosuggestUIClass extends UIInputClass
+class UIAutosuggest extends UIInput
 {
     public function __construct($name, $values)
     {

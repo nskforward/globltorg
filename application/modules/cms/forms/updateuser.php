@@ -11,7 +11,7 @@ function getFormUpdateuser()
             'autocomplete' => false,
             'elements' => array(
                 'title' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'Имя Фамилия',
                     'required' => true,
                     'minLength' => 4,
@@ -20,7 +20,7 @@ function getFormUpdateuser()
                     'formatting' => array('trim', 'upperfirstletters')
                     ),
                 'email' => array(
-                    'type' => 'text',
+                    'type' => 'inputText',
                     'label'=> 'E-mail',
                     'required' => true,
                     'minLength' => 4,
@@ -28,13 +28,13 @@ function getFormUpdateuser()
                     'validator' => 'email'
                     ),
                 'pass' => array(
-                    'type' => 'password',
+                    'type' => 'inputPassword',
                     'label'=> 'Новый пароль',
                     'required' => false,
                     'maxLength' => 64
                     ),
                 'repass' => array(
-                    'type' => 'password',
+                    'type' => 'inputPassword',
                     'label'=> 'Повтор пароля',
                     'required' => false,
                     'maxLength' => 64,
