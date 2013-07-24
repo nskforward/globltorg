@@ -6,6 +6,7 @@ function getFormMenu()
             'name' => 'menu',
             'class' => 'form',
             'action' => '/cms/menu/submit',
+            'cancel_url' => '/cms/menu',
             'submit_title' => 'Изменить',
             'method' => 'post',
             'autocomplete' => false,

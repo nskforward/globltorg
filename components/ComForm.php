@@ -137,7 +137,8 @@ class ComForm
                 }
              }
         }
-        $this->html .= '<tr><td></td><td><button id="submit" onclick="checkForm(\''.$this->name.'\', \''.$this->action.'\'); return false;">'.$this->submit_title.'</button></td></tr>';
+        $cancel = ($this->cancel_url !== null)?'&nbsp;<button onclick="location.href=\''.$this->cancel_url.'\';return false;" class="grey">Отмена</button>':null;
+        $this->html .= '<tr><td></td><td><button id="submit" onclick="checkForm(\''.$this->name.'\', \''.$this->action.'\'); return false;">'.$this->submit_title.'</button> '.$cancel.'</td></tr>';
         $this->html .= '</table></form>';
     }
 

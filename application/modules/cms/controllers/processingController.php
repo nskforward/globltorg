@@ -19,18 +19,18 @@ class processingController extends ComPController
             ComResponse::JSON(array('message', array('Ошибка'=>'У вас недостаточно прав для выполнения этого действия')));
             return;
         }
-       
+        
         $form = new ComForm('upload');
         $params = $form->getElements();
         if (!in_array($_FILES['files']['type'][0], $params['file']['accept']))
         {
-            ComResponse::JSON(array('message', array('Error'=>'Загружаемый вами файл имеет неподдерживаемый тип "'.$_FILES['files']['type'][0].'". Попробуйте загрузить другую картинку.')));
+            ComResponse::JSON(array('message', array('Ошибка'=>'Загружаемый вами файл имеет неподдерживаемый тип "'.$_FILES['files']['type'][0].'"')));
             return;
         }
       
         if ($_FILES['files']['size'][0] > $params['file']['maxSize'])
         {
-            ComResponse::JSON(array('message', array('Error'=>'Загружаемый файл превышает лимит для размера файла. Попробуйте уменьшить размер или загрузить другую картинку.')));
+            ComResponse::JSON(array('message', array('Ошибка'=>'Загружаемый файл превышает лимит для размера файла')));
             return;
         }
 

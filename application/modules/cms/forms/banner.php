@@ -6,6 +6,7 @@ function getFormBanner()
             'name' => 'banner',
             'class' => 'form',
             'action' => 'submit',
+            'cancel_url' => '/cms/banners',
             'submit_title' => 'Создать',
             'method' => 'post',
             'autocomplete' => false,

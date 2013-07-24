@@ -20,7 +20,7 @@ class UICheckbox extends UIBaseElement
     public function getHtml()
     {
         $checked = ($this->selected == true)?' checked':null;
-        return '<input type="checkbox" name="'.$this->name.'" value="'.$this->value.'"'.$checked.'>'.$this->title;
+        return '<input type="checkbox" name="'.$this->name.'" value="1"'.$checked.'>'.$this->title;
     }
 }
 

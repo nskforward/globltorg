@@ -7,6 +7,7 @@ function getFormOffer()
             'class' => 'form',
             'action' => '/cms/newoffer/submit',
             'submit_title' => 'Создать',
+            'cancel_url' => '/cms/offers',
             'method' => 'post',
             'autocomplete' => false,
             'elements' => array(

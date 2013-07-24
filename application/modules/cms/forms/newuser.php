@@ -6,6 +6,7 @@ function getFormNewuser()
             'name' => 'userform',
             'class' => 'form',
             'action' => '/cms/users/create',
+            'cancel_url' => '/cms/users',
             'submit_title' => 'Создать',
             'method' => 'post',
             'autocomplete' => false,

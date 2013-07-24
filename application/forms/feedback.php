@@ -7,6 +7,7 @@ function getFormFeedback()
             'class' => 'form',
             'action' => 'guestsubmit/feedback',
             'submit_title' => 'Заказать',
+            'cancel_url' => '/offers',
             'method' => 'post',
             'autocomplete' => false,
             'elements' => array(

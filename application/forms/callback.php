@@ -7,6 +7,7 @@ function getFormCallback()
             'class' => 'form',
             'action' => 'guestsubmit/callback',
             'submit_title' => 'Заказать',
+            'cancel_url' => '/offers',
             'method' => 'post',
             'autocomplete' => false,
             'elements' => array(

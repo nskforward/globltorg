@@ -44,12 +44,20 @@ $(function()
         {
             PopupHidden();
             setpopupshowclose();
-            if(data.result[0]=="success")
+            switch (data.result[0])
             {
+                case "success":
                 $("<input type=\"hidden\" name=\"uploads[]\" value=\""+data.result[1]+"\"><p><img src=\"/img/icons/success_small.png\"> Success <small>"+data.result[1]+"</small></p>").insertAfter("#fileupload");
-            }
-            else
-            {
+                break;
+                
+                case "message":
+                $.each(data.result[1], function(key, value)
+                {
+                    showpopup(key, value);
+                });
+                break;
+                
+                default:
                 showpopup("Error", data.result[1]);
             }
         }

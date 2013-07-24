@@ -42,7 +42,7 @@ function getFormRole()
                     'type' => 'checkbox',
                     'label'=> 'Доступ',
                     'title' => 'разрешить',
-                    'value' => true
+                    'selected' => true
                 )
             )
         );

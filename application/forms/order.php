@@ -8,6 +8,7 @@ function getFormOrder()
             'class' => 'form',
             'action' => 'guestsubmit/order',
             'submit_title' => 'Подобрать',
+            'cancel_url' => '/offers',
             'method' => 'post',
             'autocomplete' => false,
             'elements' => array(
