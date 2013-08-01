@@ -20,7 +20,7 @@ class ComValidator
         {
             case 'email' : return "/^[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,4}|museum|travel)$/"; break;
             case 'anum' : return "/^([a-z][-_0-9a-z]+)$/"; break;
-            case 'alphastrings' : return "/^([,.-_ 0-9a-zA-Zа-яА-ЯёЁ]+)$/"; break;
+            case 'alphastrings' : return "/^([-,._ 0-9a-zA-Zа-яА-ЯёЁ]+)$/"; break;
             case 'num' : return "/^([0-9]+)$/i"; break;
             case 'decimal' : return "/^([0-9]+.[0-9]+)|([0-9]+)$/i"; break;
             case 'version' : return "/^([A-Za-z.0-9]+)$/i"; break;
